@@ -1,10 +1,13 @@
 [tool.poetry]
-name = "amqp-worker"
+name = "amqp-workers"
 version = "0.1.0"
 description = ""
 authors = ["JimZhang <zzl22100048@gmail.com>"]
 readme = "README.md"
-packages = [{include = "amqp_worker"}]
+packages = [{include = "amqpworker"}]
+repository = "https://git.loom.run/Coder/amqp-worker"
+keywords = ["amqp", "rabbitmq"]
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
