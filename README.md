@@ -86,7 +86,7 @@ app.run()
 
 ## 贡献者
 
-- @JimZhang
+- [@JimZhang](https://git.loom.run/zzl221000)
 
 ## 许可证
 
