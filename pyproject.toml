@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "amqp-worker"
+version = "0.1.0"
+description = ""
+authors = ["JimZhang <zzl22100048@gmail.com>"]
+readme = "README.md"
+packages = [{include = "amqp_worker"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+amqpstorm = {version = "^2.10.6", source = "douban"}
+pydantic = {version = "1.10.7", source = "douban"}
+loguru = {version = "^0.7.0", source = "douban"}
+cached-property = {version = "^1.5.2", source = "douban"}
+delayedqueue = {version = "^1.0.0", source = "douban"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
+[[tool.poetry.source]]
+name = "douban"
+url = "https://mirror.baidu.com/pypi/simple"
