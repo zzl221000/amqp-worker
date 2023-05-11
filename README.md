@@ -94,9 +94,3 @@ app.run()
 ## License
 
 amqp-worker uses MIT license. Please refer to LICENSE file for details.
-
-Source: Conversation with Bing, 2023/5/11
-(1) readme.so. https://readme.so/.
-(2) dephraiim/translate-readme - Github. https://github.com/dephraiim/translate-readme.
-(3) Translations for ReadMe. https://www.translate.com/integrations/readme.
-(4) Translate Markdown(Readme.md) to Any Language.. https://dev.to/dephraiim/translate-readme-to-any-language-2jia.
