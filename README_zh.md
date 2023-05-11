@@ -1,5 +1,5 @@
 # 🐰amqp-worker
-[English]() | 简体中文
+[English](https://git.loom.run/Coder/amqp-worker/src/branch/master/README.md) | 简体中文
 
 amqp-worker 是一个基于 Python 的多线程 RabbitMQ 消费框架。它可以让你在消费消息时更加高效和稳定。
 
