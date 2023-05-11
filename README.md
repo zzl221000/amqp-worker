@@ -1,32 +1,35 @@
 # 🐰amqp-worker
 
-amqp-worker 是一个基于 Python 的多线程 RabbitMQ 消费框架。它可以让你在消费消息时更加高效和稳定。
+English | [简体中文](https://git.loom.run/Coder/amqp-worker/src/branch/master/README_zh.md)
 
-## 功能特点
 
-- 批量消费：按批处理消息，提高消费效率。
-- 自动重连：当 RabbitMQ 服务断开连接时，amqp-worker 会自动重连，保证消费不中断。
-- 自定义消费模式：消费函数中自由决定使用多线程和协程。
-- 可配置的消息确认方式：支持自动确认和手动确认两种确认方式，根据你的消费需求进行配置。
-- 可配置的异常处理：支持全局配置消息异常的消费模式，重入队列、重新插入、消费消息。
+amqp-worker is a Python-based multi-threaded RabbitMQ consumer framework. It allows you to consume messages more efficiently and stably.
 
-## 安装方式
+## Features
 
-你可以使用 pip 工具来安装 amqp-worker:
+- Batch consumption: process messages in batches, improve consumption efficiency.
+- Automatic reconnection: when RabbitMQ service disconnects, amqp-worker will automatically reconnect, ensuring uninterrupted consumption.
+- Customizable consumption mode: freely decide to use multi-threading and coroutines in the consumption function.
+- Configurable message acknowledgment mode: support automatic acknowledgment and manual acknowledgment modes, configure according to your consumption needs.
+- Configurable exception handling: support global configuration of message exception consumption mode, re-enter queue, re-insert, consume message.
+
+## Installation
+
+You can use pip tool to install amqp-worker:
 
 ```
-pip install amqp-worker
+pip install amqp-workers
 ```
 
-## 使用方法
+## Usage
 
-首先，你需要在你的 Python 代码中引入 amqp_worker 模块：
+First, you need to import the amqp_worker module in your Python code:
 
 ```python
 from amqpworker.app import App
 ```
 
-然后，你需要实例化一个 App 对象，而App对象依赖AMQPConnection对象：
+Then, you need to instantiate an App object, and the App object depends on the AMQPConnection object:
 
 ```python
 from amqpworker.connections import AMQPConnection
@@ -37,7 +40,7 @@ app = App(connections=[amqp_conn])
 
 
 
-接下来，你需要定义消费函数:
+Next, you need to define the consumption function:
 
 ```python
 @app.amqp.consume(
@@ -49,17 +52,17 @@ def _handler(msgs: List[RabbitMQMessage]):
 ```
 
 
-上面的代码中我们给消费函数一个装饰器，给出了消费的队列，每批消费的数量，值得注意的是，消费函数的参数类型为`List[RabbitMQMessage]`
+In the above code we give the consumption function a decorator, giving the consumption queue, the number of consumption per batch, it is worth noting that the parameter type of the consumption function is `List[RabbitMQMessage]`
 
-最后，只需要调用 `run` 方法即可开始消费：
+Finally, just call the `run` method to start consuming:
 
 ```python
 app.run()
 ```
 
-## 示例代码
+## Example code
 
-下面是一个简单的示例代码，它会消费名为 `test` 的队列中的消息：
+Below is a simple example code that will consume messages from a queue named `test`:
 
 ```python
 from datetime import datetime
@@ -84,10 +87,16 @@ app.run()
 
 ```
 
-## 贡献者
+## Contributors
 
 - [@JimZhang](https://git.loom.run/zzl221000)
 
-## 许可证
+## License
 
-amqp-worker 使用 MIT 许可证。详情请参阅 LICENSE 文件。
+amqp-worker uses MIT license. Please refer to LICENSE file for details.
+
+Source: Conversation with Bing, 2023/5/11
+(1) readme.so. https://readme.so/.
+(2) dephraiim/translate-readme - Github. https://github.com/dephraiim/translate-readme.
+(3) Translations for ReadMe. https://www.translate.com/integrations/readme.
+(4) Translate Markdown(Readme.md) to Any Language.. https://dev.to/dephraiim/translate-readme-to-any-language-2jia.
