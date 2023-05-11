@@ -2,7 +2,6 @@ import asyncio
 import time
 from collections.abc import MutableMapping
 from signal import Signals
-import signal
 from typing import Any, Dict, Iterable, Optional, Callable
 
 from amqpworker.conf import logger
