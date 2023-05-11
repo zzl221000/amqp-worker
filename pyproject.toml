@@ -18,6 +18,10 @@ cached-property = {version = "^1.5.2", source = "douban"}
 delayedqueue = {version = "^1.0.0", source = "douban"}
 
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pytest-mock = "^3.10.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -27,3 +31,10 @@ build-backend = "poetry.core.masonry.api"
 [[tool.poetry.source]]
 name = "douban"
 url = "https://mirror.baidu.com/pypi/simple"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]

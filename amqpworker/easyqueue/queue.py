@@ -18,8 +18,6 @@ from typing import (
 )
 
 from amqpstorm import Message
-from loguru import logger
-
 from amqpworker.easyqueue.connection import AMQPConnection
 from amqpworker.easyqueue.exceptions import UndecodableMessageException
 from amqpworker.easyqueue.message import AMQPMessage
@@ -262,6 +260,7 @@ class JsonQueue(BaseQueue, Generic[T]):
         :param exchange: The exchange to publish the message
         :param routing_key: The routing key to publish the message
         """
+
         if data and serialized_data:
             raise ValueError("Only one of data or json should be specified")
 
@@ -270,7 +269,10 @@ class JsonQueue(BaseQueue, Generic[T]):
                 serialized_data = data
             else:
                 serialized_data = self.serialize(data, ensure_ascii=False)
-                properties['Content-Type'] = 'application/json'
+                if properties is None:
+                    properties = {'Content-Type': 'application/json'}
+                elif not properties.get('Content-Type'):
+                    properties['Content-Type'] = 'application/json'
 
         if not isinstance(serialized_data, bytes):
             serialized_data = serialized_data.encode()

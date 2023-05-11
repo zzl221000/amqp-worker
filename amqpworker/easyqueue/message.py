@@ -14,7 +14,6 @@ class AMQPMessage(Generic[T]):
         "queue_name",
         "serialized_data",
         "delivery_tag",
-        "_envelope",
         "_properties",
         "_deserialization_method",
         "_deserialized_data",
