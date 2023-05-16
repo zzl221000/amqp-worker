@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "amqp-workers"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["JimZhang <zzl22100048@gmail.com>"]
 readme = "README.md"
@@ -10,7 +10,7 @@ keywords = ["amqp", "rabbitmq"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 amqpstorm = {version = "^2.10.6", source = "douban"}
 pydantic = {version = "1.10.7", source = "douban"}
 loguru = {version = "^0.7.0", source = "douban"}
