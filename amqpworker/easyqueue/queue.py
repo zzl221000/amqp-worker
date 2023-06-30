@@ -330,7 +330,7 @@ class JsonQueue(BaseQueue, Generic[T]):
 
         def start():
             try:
-                self.connection.channel.start_consuming()
+                self.connection.channel.start_consuming(auto_decode=False)
             except:
                 traceback.print_exc()
 
